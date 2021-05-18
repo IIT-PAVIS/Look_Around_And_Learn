@@ -1,0 +1,10 @@
+defaults:
+  - detectron_args: maskrcnn
+  - replay: rgb_depth_multicam  
+
+base_dir: /home/gianlucascarpellini/unsupervised-sensor-network
+habitat_base_cfg_dir: ${base_dir}/confs/habitat
+habitat_cfg: default.yaml
+
+exp_base_dir: ${base_dir}/exps
+data_base_dir: ${base_dir}/data

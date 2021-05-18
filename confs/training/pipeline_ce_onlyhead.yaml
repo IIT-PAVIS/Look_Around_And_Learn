@@ -1,0 +1,32 @@
+# @package _group_
+
+batch_size: 16
+prune: True
+n_iterations: 50
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+exp_base_name: pipeline_soft
+exp_name: cross_entropy_sgd_onlyhead
+lr: 0.0001
+optimizer: SGD
+optimizer_params:
+  momentum: 0.9
+  nesterov: True
+
+use_coco: False
+transform_type: strong_image
+teacher_momentum: 0.99
+temperature: 2
+pipeline: Pipeline
+student_model: MultiStageModel
+consensus: vanilla
+alpha: 0.9
+loss_weights:
+  loss_cls: 1.0
+  loss_soft: 0.0
+  contrastive_loss: 0.0
+  loss_mask: 1.0
+  loss_rpn_cls: 0.0
+  loss_rpn_loc: 0.0
+
+

@@ -1,0 +1,8 @@
+# @package _group_
+config_file: ${base_dir}/third_parties/detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml
+confidence_threshold: 0.1
+
+opts:
+  - MODEL.WEIGHTS
+  - detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl
+  

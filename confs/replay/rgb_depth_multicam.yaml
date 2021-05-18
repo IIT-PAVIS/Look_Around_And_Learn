@@ -1,0 +1,7 @@
+# @package _group_
+episode_id: 3000
+start_step: 1
+end_step: -1
+cameras_id: [0]
+modalities: ["bbsgt"]
+exp_name: experiment

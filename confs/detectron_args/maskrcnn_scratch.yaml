@@ -1,0 +1,9 @@
+# @package _group_
+config_file: ${base_dir}/third_parties/detectron2/configs/quick_schedules/mask_rcnn_R_50_FPN_inference_acc_test.yaml
+confidence_threshold: 0.05
+MODEL:
+  ROI_HEADS:
+    NMS_THRESH_TEST: 0.5
+  WEIGHTS: ""
+
+  

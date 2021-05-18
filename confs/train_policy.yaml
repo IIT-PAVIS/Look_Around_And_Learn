@@ -1,0 +1,37 @@
+defaults:
+  - detectron_args: maskrcnn
+  - replay: rgb_depth_multicam
+  - training: pipeline_ce
+
+base_dir: /path/to/project/data
+
+MODE: generate
+habitat_base_cfg_dir: ${base_dir}/confs/habitat
+habitat_cfg: gibson_goal_exploration.yaml
+exp_base_dir: ${base_dir}/exps/policies
+data_base_dir: ${base_dir}/data
+early_stopping: 0
+epochs: 20
+gpus: 1
+
+notes: 
+exp_name: ${now:%m-%d-%H-%M-%S}_policy_habitat_${habitat_cfg}_${notes}
+
+test_set: fix_test #test_scene_test
+
+hydra:
+  output_subdir: reproduce
+  job:
+    config:
+      # configuration for the ${hydra.job.override_dirname} runtime variable
+      override_dirname:
+        kv_sep: '_'
+        item_sep: '__'
+        exclude_keys: []
+  sweep:
+    dir: ${exp_base_dir}
+    subdir: ${exp_name}
+
+  run:
+    dir: ${hydra.sweep.dir}/${hydra.sweep.subdir}
+      

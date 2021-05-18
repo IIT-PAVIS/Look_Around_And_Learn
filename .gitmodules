@@ -1,0 +1,12 @@
+[submodule "third_parties/detectron2"]
+	path = third_parties/detectron2
+	url = https://github.com/facebookresearch/detectron2.git
+[submodule "third_parties/habitat"]
+	path = third_parties/habitat
+	url = https://github.com/facebookresearch/habitat-lab.git
+[submodule "third_parties/Object-Goal-Navigation"]
+	path = third_parties/Object-Goal-Navigation
+	url = https://github.com/devendrachaplot/Object-Goal-Navigation.git
+[submodule "third_parties/pyntcloud"]
+	path = third_parties/pyntcloud
+	url = https://github.com/morpheus1820/pyntcloud.git

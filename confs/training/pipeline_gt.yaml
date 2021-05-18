@@ -1,0 +1,35 @@
+# @package _group_
+
+batch_size: 8
+prune: True
+n_iterations: 1
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+thr: 0
+exp_base_name: pipeline_gt
+exp_name_training: ground_truth_sgd
+lr: 0.0001
+optimizer: SGD
+optimizer_params:
+  momentum: 0.9
+  nesterov: True
+
+use_coco: False
+transform_type: strong_image
+teacher_momentum: 0.99
+temperature: 2
+
+pipeline: Pipeline
+student_model: MultiStageModel
+consensus: vanilla
+alpha: 0.9
+loss_weights:
+  loss_cls: 1.0
+  loss_soft: 1.0
+  contrastive_loss: 0.0
+  loss_mask: 1.0
+
+weight_sampler: False
+update_target: True
+reinit_online: False
+use_gt: True

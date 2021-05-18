@@ -1,0 +1,24 @@
+# @package _group_
+
+batch_size: 16
+prune: True
+n_iterations: 50
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+exp_base_name: pipeline_soft
+exp_name: simple_adam
+lr: 0.00001
+optimizer: Adam
+optimizer_params:
+  amsgrad: False
+
+teacher_momentum: 0.99
+temperature: 2
+
+consensus: logits
+alpha: 0.8
+loss_weights:
+  loss_cls: 1.0
+  contrastive_loss: 1.0
+  loss_mask: 1.0
+
